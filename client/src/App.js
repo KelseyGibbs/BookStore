@@ -4,28 +4,26 @@ import "./App.css";
 import Search from  "./pages/Search";
 import Saved from  "./pages/Saved";
 
-var fetchingResource = null;
+// var fetchingResource = null;
 
-function googleBooksAPI () {
-    if(fetchingResource) {
-        fetchingResource.abort();
-    }
-    fetchingResource = $.ajax({
-       url: '/resource',
-       data: {},
-       cache: false,
-       timeout: 15000,
-       type: 'GET',
-       beforeSend: function () {},
-       complete: function () {
-           fetchingResource = null;
-       },
-       error: function () {
-           if (result.statusText != "abort");
-       },
-       success: function () {}
-    }); 
-}
+// function googleBooksAPI () {
+// queryURL = ""
+//     fetchingResource = $.ajax({
+//        url: '/resource',
+//        data: {},
+//        cache: false,
+//        timeout: 15000,
+//        type: 'GET',
+//        beforeSend: function () {},
+//        complete: function () {
+//            fetchingResource = null;
+//        },
+//        error: function () {
+//            if (result.statusText != "abort");
+//        },
+//        success: function () {}
+//     }); 
+// }
 
 
 class App extends Component {
