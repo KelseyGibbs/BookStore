@@ -19,12 +19,10 @@ var BookSchema = new Schema({
     required: true
   },
   image: {
-    type: String,
-    required: true
+    type: String
   },
   link: {
-    type: String,
-    required: true
+    type: String
   }
 });
 
