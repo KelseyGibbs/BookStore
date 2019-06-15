@@ -12,9 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 
 app.use(routes);
 
