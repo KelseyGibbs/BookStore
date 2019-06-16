@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 //   Connect to the Mongo DB
-let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
+let MONGODB_URI = process.env.MONGOLAB_COBALT_URI || "mongodb://localhost/googlebooks";
 
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true
