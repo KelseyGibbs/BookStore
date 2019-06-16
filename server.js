@@ -10,20 +10,22 @@ const mongoose = require('mongoose');
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+// Define API routes here
 app.use(routes);
 
-//   Connect to the Mongo DB
 let MONGODB_URI = process.env.MONGOLAB_COBALT_URI || "mongodb://localhost/googlebooks";
 
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true
 });
+
+// Send every other request to the React app
+// Define any API routes before this runs
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
